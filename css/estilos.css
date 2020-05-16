@@ -64,6 +64,7 @@ header {
   
   a {
     text-decoration: none;
+    font-family: 'Oswald', sans-serif;
   }
   
   a:hover {
@@ -74,22 +75,72 @@ header {
   .site-title {
     text-align: center;
     color: whitesmoke;
+    text-shadow: black 0.2em 0.2em 0.3em;
   }
 
   .site-title {
     font-size: 2em;
+    font-family: 'Kaushan Script', cursive;
   }
   
   .site-subtitle {
+    color: rgb(161, 5, 5);
+    font-size: 1.5em;
     font-style: italic;
+    font-family: 'Oswald', sans-serif;
+  }
+  
+  .portfolio {
+    padding: 2em;
+    margin-bottom: 1.5em;
+  }
+  
+  .portfolio h2 {
+    color: whitesmoke;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    text-shadow: black 0.2em 0.2em 0.3em
+  }
+
+  .portfolio .grid {
+    display: grid;
+    gap: 2em;
+  }
+
+  @media (min-width: 560px) {
+    .portfolio .grid {
+      grid-template-columns: 240px 240px;
+    }
+  }
+
+  @media (min-width: 880px) {
+    .portfolio .grid {
+      grid-template-columns: repeat(3, 260px);
+      align-items: center;
+      justify-content: center;
+      height: calc(100vh - 4em - 48px - 1.5em);
+    }
+  }
+
+  .portfolio figure {
+    font-family: 'Source Code Pro', monospace;
+    color: whitesmoke;
+    text-align: center;
+    text-shadow: black 0.2em 0.2em 0.3em
   }
 
 .img-portfolio {
-    height: 180px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 70%;
 }
 
 .img-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     height: 210px;
     width: 250px;
 }
