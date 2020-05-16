@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url("https://wallpaperaccess.com/download/4k-black-806443");
+    background-color: rgb(10, 9, 9);
     background-size: auto 120vh;
     font-family: Georgia;
     height: 100vh;
@@ -41,10 +41,11 @@ header {
 }
   
   .menu {
-    background-color: white;
+    background-color: whitesmoke;
     position: fixed;
     width: 100vw;
     top: 0;
+    z-index: 1;
   }
   
   .menu ul {
@@ -60,6 +61,13 @@ header {
       color: rgb(161, 5, 5);
       display: block;
       padding: 10px 20px;
+      transition: background-color 2s, color 1s;
+  }
+
+  .menu a:active,
+  .menu a:hover {
+    background-color: rgb(161, 5, 5);
+    color: whitesmoke;
   }
   
   a {
@@ -71,11 +79,22 @@ header {
     text-decoration: underline;
   }
   
+  .titulo {
+    opacity: 0;
+    animation: linear 1.5s animaTitulo forwards;
+  }
+
+  @keyframes animaTitulo {
+    100% {
+      opacity: 1;
+    }
+  }
+
   .site-subtitle,
   .site-title {
     text-align: center;
     color: whitesmoke;
-    text-shadow: black 0.2em 0.2em 0.3em;
+    text-shadow: black 0.2em 0.2em 1em;
   }
 
   .site-title {
@@ -90,11 +109,14 @@ header {
     font-family: 'Oswald', sans-serif;
   }
   
+  .contato,
   .portfolio {
     padding: 2em;
     margin-bottom: 1.5em;
+    min-height: 100vh;
   }
   
+  .contato,
   .portfolio h2 {
     color: whitesmoke;
     font-family: 'Oswald', sans-serif;
@@ -127,7 +149,13 @@ header {
     font-family: 'Source Code Pro', monospace;
     color: whitesmoke;
     text-align: center;
-    text-shadow: black 0.2em 0.2em 0.3em
+    text-shadow: black 0.2em 0.2em 0.3em;
+    transition: color 1s;
+  }
+
+  .portfolio figcaption:hover {
+    color: rgb(161, 5, 5);
+    text-decoration: underline;
   }
 
 .img-portfolio {
@@ -135,6 +163,11 @@ header {
     width: 150px;
     object-fit: cover;
     border-radius: 70%;
+    transition: transform 500ms;
+}
+
+.img-portfolio:hover {
+  transform: scale(1.1);
 }
 
 .img-logo {
@@ -143,4 +176,20 @@ header {
     margin-right: auto;
     height: 210px;
     width: 250px;
+}
+
+.contato .icons {
+  text-align: center;
+}
+
+.contato a {
+  color: whitesmoke;
+  font-size: 2.5em;
+  transition: text-shadow 1s;
+}
+
+.contato a:active,
+.contato a:hover {
+  text-decoration: none;
+  text-shadow: 0em 0em 0.3em rgb(161, 5, 5);
 }
